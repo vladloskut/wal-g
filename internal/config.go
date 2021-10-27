@@ -165,6 +165,10 @@ var (
 		MongoDBLastWriteUpdateInterval: "3s",
 	}
 
+	MysqlDefaultSettings = map[string]string{
+		StreamSplitterBlockSize: "1073741824",
+	}
+
 	SQLServerDefaultSettings = map[string]string{
 		SQLServerDBConcurrency: "10",
 	}
@@ -376,6 +380,8 @@ func ConfigureSettings(currentType string) {
 			dbSpecificDefaultSettings = PGDefaultSettings
 		case MONGO:
 			dbSpecificDefaultSettings = MongoDefaultSettings
+		case MYSQL:
+			dbSpecificDefaultSettings = MysqlDefaultSettings
 		case SQLSERVER:
 			dbSpecificDefaultSettings = SQLServerDefaultSettings
 		case GP:
