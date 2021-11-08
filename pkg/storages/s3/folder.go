@@ -218,7 +218,6 @@ func (folder *Folder) getReaderSettings() (rangeEnabled bool, retriesCount int, 
 		maxRetryDelay = RangeQueryMaxRetryDelay
 	}
 
-
 	return rangeEnabled, retriesCount, minRetryDelay, maxRetryDelay
 }
 
